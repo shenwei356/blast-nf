@@ -1,0 +1,15 @@
+# nextflow
+.nextflow
+.nextflow.log*
+work
+
+# BLAST DB
+*.nhr
+*.nin
+*.nsq
+
+*.phr
+*.pin
+*.psq
+
+*blast*@*
