@@ -26,7 +26,7 @@ Author: Wei Shen <shenwei356@gmail.com>
 Source code: https://github.com/shenwei356/blast
 */
 
-version = "0.1.0"
+version = "0.2.0"
 
 params.db = ""          // db name
 params.app = "blastn"   // blast program
@@ -120,7 +120,7 @@ if (argMissing(params.app)) {
 cpus = params.num_threads <= 0 ?  Runtime.getRuntime().availableProcessors(): params.num_threads
 
 // checking blast grogram
-idxSuffix = ["blastn": "nin", "blastp": "pin", "blastx": "pin", "tblastx": "nin"]
+idxSuffix = ["blastn": "nal", "blastp": "pal", "blastx": "pal", "tblastx": "nal"]
 app = params.app
 if (!idxSuffix.containsKey(app)) {
     exit 1, "illegal blast program: $app. Available: " + idxSuffix.keySet().join(", ") + '. Type "blast.nf --help" for help.'
