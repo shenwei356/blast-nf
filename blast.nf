@@ -120,16 +120,16 @@ if (argMissing(params.app)) {
 cpus = params.num_threads <= 0 ?  Runtime.getRuntime().availableProcessors(): params.num_threads
 
 // checking blast grogram
-idxSuffix = ["blastn": "nal", "blastp": "pal", "blastx": "pal", "tblastx": "nal"]
+// idxSuffix = ["blastn": "nal", "blastp": "pal", "blastx": "pal", "tblastx": "nal"]
 app = params.app
 if (!idxSuffix.containsKey(app)) {
     exit 1, "illegal blast program: $app. Available: " + idxSuffix.keySet().join(", ") + '. Type "blast.nf --help" for help.'
 }
 
 // checking blast database 
-if (!file("${params.db}."+idxSuffix[app]).exists()) {
-    exit 1, "index file not found for db: $params.db . Please make blastdb."
-}
+// if (!file("${params.db}."+idxSuffix[app]).exists()) {
+//  exit 1, "index file not found for db: $params.db . Please make blastdb."
+// }
 db = file(params.db)
 
 // checking query files
